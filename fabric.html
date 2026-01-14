@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric & Fashion | CALUFIA</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#1c1c1c',
+                            gray: '#888888',
+                            light: '#f5f5f5',
+                        }
+                    },
+                    letterSpacing: {
+                        widest: '.2em',
+                        leisure: '.1em',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <header
+        class="fixed top-0 w-full z-50 py-6 md:py-8 bg-brand-black/80 backdrop-blur-md transition-colors duration-500">
+        <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="hover:opacity-80 transition-opacity block">
+                <img src="assets/logo.png" alt="CALUFIA" class="h-12 md:h-14 w-auto object-contain">
+            </a>
+            <nav class="flex flex-wrap justify-center gap-6 md:gap-12">
+                <a href="about.html"
+                    class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors text-white">About</a>
+                <a href="fabric.html" class="text-sm uppercase tracking-leisure text-brand-gray italic">Fabric</a>
+                <!-- Active -->
+                <a href="leather.html"
+                    class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors text-white">Leather</a>
+                <a href="finart.html"
+                    class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors text-white">FinArt</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="pt-48 pb-24 container mx-auto px-6 md:px-12 text-center reveal">
+        <p class="font-sans text-xs text-brand-gray uppercase tracking-widest mb-6">The Foundation</p>
+        <h1 class="font-serif text-5xl md:text-7xl mb-12">Fabric & Fashion</h1>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto border-t border-brand-light/10 pt-12">
+            <div class="space-y-4">
+                <h3 class="font-serif text-2xl italic">Quiet Luxury</h3>
+                <p class="text-sm text-brand-gray leading-relaxed">
+                    Whispered, not shouted. We design for the woman who finds confidence in restraint.
+                </p>
+            </div>
+            <div class="space-y-4">
+                <h3 class="font-serif text-2xl italic">Ethical Craft</h3>
+                <p class="text-sm text-brand-gray leading-relaxed">
+                    Tailor-made and ready-to-wear collections produced with full transparency and artisan respect.
+                </p>
+            </div>
+            <div class="space-y-4">
+                <h3 class="font-serif text-2xl italic">Sustainable Thread</h3>
+                <p class="text-sm text-brand-gray leading-relaxed">
+                    Materials sourced from regenerative farms. Every stitch is a commitment to the future.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="pb-32 container mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+
+            <!-- Item 1 (Active Modal) -->
+            <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden reveal"
+                onclick="openModal('modal-1')">
+                <div class="absolute inset-0 overflow-hidden">
+                    <img src="assets/hannah-dress-full.jpg" alt="Hannah Dress"
+                        class="w-full h-full object-cover card-zoom">
+                </div>
+                <div class="absolute inset-0 transition-colors duration-500"></div>
+                <div class="absolute bottom-8 left-8">
+                    <p class="font-sans text-xs text-brand-light tracking-widest uppercase mb-1">Collection I</p>
+                    <h3 class="font-serif text-3xl text-white italic">Hannah Dress</h3>
+                </div>
+            </div>
+
+            <!-- Item 2 (Active Modal) -->
+            <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden reveal delay-100"
+                onclick="openModal('modal-2')">
+                <div class="absolute inset-0 overflow-hidden">
+                    <img src="assets/crimson-full.jpg" alt="Crimson Elegance"
+                        class="w-full h-full object-cover card-zoom">
+                </div>
+                <div class="absolute inset-0 transition-colors duration-500"></div>
+                <div class="absolute bottom-8 left-8">
+                    <p class="font-sans text-xs text-brand-light tracking-widest uppercase mb-1">Collection II</p>
+                    <h3 class="font-serif text-3xl text-white italic">Crimson Elegance</h3>
+                </div>
+            </div>
+
+            <!-- Item 3 (Active Modal) -->
+            <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden reveal delay-200"
+                onclick="openModal('modal-3')">
+                <div class="absolute inset-0 overflow-hidden">
+                    <img src="assets/timeless-bangu-full.jpg" alt="Timeless Elegance"
+                        class="w-full h-full object-cover card-zoom">
+                </div>
+                <div class="absolute inset-0 transition-colors duration-500"></div>
+                <div class="absolute bottom-8 left-8">
+                    <p class="font-sans text-xs text-brand-light tracking-widest uppercase mb-1">Collection III</p>
+                    <h3 class="font-serif text-3xl text-white italic">Timeless</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal Overlay -->
+    <div id="modal-1"
+        class="modal-backdrop fixed inset-0 z-[60] flex items-center justify-center p-4 bg-brand-black/60 opacity-0 pointer-events-none transition-opacity duration-700 backdrop-blur-sm">
+        <!-- Close Button -->
+        <button onclick="closeModal('modal-1')"
+            class="absolute top-8 right-8 text-white hover:text-brand-gray transition-colors z-50">
+            <span class="font-sans text-xs uppercase tracking-widest">Close</span>
+        </button>
+
+        <div
+            class="modal-content bg-brand-dark max-w-5xl w-full max-h-[90vh] overflow-y-auto flex flex-col md:flex-row shadow-2xl opacity-0 transform translate-y-10 scale-95 transition-all duration-700">
+            <!-- Modal Image -->
+            <div class="w-full md:w-1/2">
+                <img src="assets/hannah-dress-detail.jpg" alt="Hannah Dress Detail"
+                    class="w-full h-full object-cover min-h-[50vh]">
+            </div>
+
+            <!-- Modal Content -->
+            <div class="w-full md:w-1/2 p-12 md:p-16 flex flex-col justify-center space-y-10">
+                <div>
+                    <p class="font-sans text-xs text-brand-gray tracking-widest uppercase mb-2">Model: Gape</p>
+                    <h2 class="font-serif text-5xl md:text-6xl text-brand-light italic">Hannah Dress</h2>
+                </div>
+
+                <div class="space-y-6 text-brand-gray font-serif text-lg leading-relaxed">
+                    <p>
+                        Gape dazzles in the vibrant Hannah Dress, a stunning blend of pink and purple hues that captures
+                        both elegance and playful charm. The dress features a flattering silhouette that highlights
+                        Gape’s poise and grace, making it the perfect choice for any fashion-forward occasion.
+                    </p>
+                    <p>
+                        The Hannah Dress is a true testament to bold femininity, seamlessly combining classic style with
+                        modern flair.
+                    </p>
+                </div>
+
+                <blockquote class="border-l border-brand-gray/30 pl-6 italic text-brand-light/80">
+                    "From the moment I slipped into the Hannah Dress, I felt like a true fashion icon. The pink and
+                    purple tones are so vibrant and captivating, and the fit is absolutely perfect. It’s comfortable,
+                    yet chic, making me feel both confident and elegant."
+                    <footer class="text-xs font-sans text-brand-gray uppercase tracking-widest mt-4 not-italic">— Gape,
+                        Client</footer>
+                </blockquote>
+            </div>
+        </div>
+
+        <!-- Click outside to close area -->
+        <div class="absolute inset-0 -z-10" onclick="closeModal('modal-1')"></div>
+    </div>
+
+    <!-- Modal Overlay 2 (Crimson Elegance) -->
+    <div id="modal-2"
+        class="modal-backdrop fixed inset-0 z-[60] flex items-center justify-center p-4 bg-brand-black/60 opacity-0 pointer-events-none transition-opacity duration-700 backdrop-blur-sm">
+        <!-- Close Button -->
+        <button onclick="closeModal('modal-2')"
+            class="absolute top-8 right-8 text-white hover:text-brand-gray transition-colors z-50">
+            <span class="font-sans text-xs uppercase tracking-widest">Close</span>
+        </button>
+
+        <div
+            class="modal-content bg-brand-dark max-w-5xl w-full max-h-[90vh] overflow-y-auto flex flex-col md:flex-row shadow-2xl opacity-0 transform translate-y-10 scale-95 transition-all duration-700">
+            <!-- Modal Image -->
+            <div class="w-full md:w-1/2">
+                <img src="assets/crimson-detail.jpg" alt="Crimson Detail"
+                    class="w-full h-full object-cover min-h-[50vh]">
+            </div>
+
+            <!-- Modal Content -->
+            <div class="w-full md:w-1/2 p-12 md:p-16 flex flex-col justify-center space-y-10">
+                <div>
+                    <p class="font-sans text-xs text-brand-gray tracking-widest uppercase mb-2">Model: Palesa Sealetsa
+                    </p>
+                    <h2 class="font-serif text-5xl md:text-6xl text-brand-light italic">Crimson</h2>
+                </div>
+
+                <div class="space-y-6 text-brand-gray font-serif text-lg leading-relaxed">
+                    <p>
+                        Palesa Sealetsa is draped in an unapologetic fusion of noir and crimson, she is the embodiment
+                        of modern elegance with a touch of defiance. The black and burgundy two-piece clings to her
+                        silhouette like a whispered secret, its sculpted lines and textures catching the light with each
+                        effortless stride.
+                    </p>
+                    <p>
+                        Her poise - magnetic, her presence a study in refined rebellion. The kind of woman who doesn’t
+                        follow trends, she writes them. This look isn’t just worn; it’s lived.
+                    </p>
+                </div>
+
+                <blockquote class="border-l border-brand-gray/30 pl-6 italic text-brand-light/80">
+                    "My purpose is to be me boldly and unapologetically, and what I wear reflects the many facets within
+                    me, coming together as one."
+                    <footer class="text-xs font-sans text-brand-gray uppercase tracking-widest mt-4 not-italic">— Palesa
+                        Sealetsa</footer>
+                </blockquote>
+            </div>
+        </div>
+
+        <!-- Click outside to close area -->
+        <div class="absolute inset-0 -z-10" onclick="closeModal('modal-2')"></div>
+    </div>
+
+    <!-- Modal Overlay 3 (Timeless) -->
+    <div id="modal-3"
+        class="modal-backdrop fixed inset-0 z-[60] flex items-center justify-center p-4 bg-brand-black/60 opacity-0 pointer-events-none transition-opacity duration-700 backdrop-blur-sm">
+        <!-- Close Button -->
+        <button onclick="closeModal('modal-3')"
+            class="absolute top-8 right-8 text-white hover:text-brand-gray transition-colors z-50">
+            <span class="font-sans text-xs uppercase tracking-widest">Close</span>
+        </button>
+
+        <div
+            class="modal-content bg-brand-dark max-w-5xl w-full max-h-[90vh] overflow-y-auto flex flex-col md:flex-row shadow-2xl opacity-0 transform translate-y-10 scale-95 transition-all duration-700">
+            <!-- Modal Image -->
+            <div class="w-full md:w-1/2">
+                <img src="assets/timeless-bangu-detail.jpg" alt="Timeless Detail"
+                    class="w-full h-full object-cover min-h-[50vh]">
+            </div>
+
+            <!-- Modal Content -->
+            <div class="w-full md:w-1/2 p-12 md:p-16 flex flex-col justify-center space-y-10">
+                <div>
+                    <p class="font-sans text-xs text-brand-gray tracking-widest uppercase mb-2">Model: Bangu</p>
+                    <h2 class="font-serif text-5xl md:text-6xl text-brand-light italic">Timeless</h2>
+                </div>
+
+                <div class="space-y-6 text-brand-gray font-serif text-lg leading-relaxed">
+                    <p>
+                        Bangu stuns in a timeless black dress that perfectly accentuates her silhouette. The elegant cut
+                        and subtle details of the dress highlight her poise and sophistication, making her the epitome
+                        of classic glamour.
+                    </p>
+                    <p>
+                        Her confident stride and effortless grace captivate the audience, ensuring all eyes remain on
+                        her. Bangu’s look is a masterclass in understated elegance, proving that sometimes, less is
+                        truly more.
+                    </p>
+                </div>
+
+                <blockquote class="border-l border-brand-gray/30 pl-6 italic text-brand-light/80">
+                    "I had the pleasure of working with Calufia founded by Shanice Maposa as a freelance model, and I
+                    cannot speak highly enough of the experience. Shanice is not only incredibly talented but also
+                    exceptionally accommodating, patient, and kind. Her passion for fashion is evident in every piece
+                    she creates."
+                    <footer class="text-xs font-sans text-brand-gray uppercase tracking-widest mt-4 not-italic">— Bangu,
+                        Freelance Model</footer>
+                </blockquote>
+            </div>
+        </div>
+
+        <!-- Click outside to close area -->
+        <div class="absolute inset-0 -z-10" onclick="closeModal('modal-3')"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-brand-dark py-12">
+        <div
+            class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-end md:items-center space-y-6 md:space-y-0">
+            <div class="text-xs text-brand-gray uppercase tracking-widest">
+                &copy; 2026 Calufia. All Rights Reserved.
+            </div>
+            <div class="flex space-x-6 text-xs uppercase tracking-widest text-brand-light">
+                <a href="https://www.instagram.com/calufia_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    target="_blank" class="hover:text-brand-gray transition-colors">Instagram</a>
+                <a href="https://www.linkedin.com/in/calufia-cla-9b23232a1/" target="_blank"
+                    class="hover:text-brand-gray transition-colors">LinkedIn</a>
+                <a href="mailto:calufiadesigns@gmail.com" class="hover:text-brand-gray transition-colors">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- Page Specific Script for Modal (Kept separate as it's specific) -->
+    <script>
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            // Animate content in specifically
+            const content = modal.querySelector('.modal-content');
+            content.classList.remove('opacity-0', 'translate-y-10', 'scale-95');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            const content = modal.querySelector('.modal-content');
+
+            // Fade out content first
+            content.classList.add('opacity-0', 'translate-y-10', 'scale-95');
+
+            // Then modal
+            setTimeout(() => {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+            }, 300);
+
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === "Escape") {
+                const activeModals = document.querySelectorAll('.modal-backdrop:not(.pointer-events-none)');
+                activeModals.forEach(modal => closeModal(modal.id));
+            }
+        });
+    </script>
+</body>
+
+</html>

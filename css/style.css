@@ -1,0 +1,61 @@
+/* Global Luxury Animation System */
+
+/* Base Settings */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #0a0a0a;
+    color: #f5f5f5;
+}
+
+/* Reveal on Scroll System */
+.reveal {
+    opacity: 0;
+    will-change: transform, opacity;
+    /* Default: Standard Luxury Fade Up */
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Variations: Distance */
+/* FinArt uses smaller movement for seriousness */
+.reveal-sm {
+    transform: translateY(10px);
+}
+/* Leather uses standard deep movement (30px), already default */
+
+/* Variations: Timing */
+/* Leather uses slower evolution */
+.duration-slow {
+    transition-duration: 1.2s;
+}
+/* Shorter delay for crispness if needed */
+.duration-fast {
+    transition-duration: 0.8s;
+}
+
+/* Delay Utilities */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* Image Hover System (Restrained Scale) */
+.group .card-zoom {
+    transition: transform 0.8s ease-in-out, opacity 0.5s ease;
+}
+.group:hover .card-zoom {
+    transform: scale(1.03); /* Subtle scale, never aggressive */
+}
+
+/* Fade Interactions */
+.hover-fade {
+    transition: opacity 0.5s ease;
+}
+.group:hover .hover-fade-target {
+    opacity: 1;
+}

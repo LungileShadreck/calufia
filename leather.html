@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leather Collection | CALUFIA</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#1c1c1c',
+                            gray: '#888888',
+                            light: '#f5f5f5',
+                        }
+                    },
+                    letterSpacing: {
+                        widest: '.2em',
+                        leisure: '.1em',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 py-6 md:py-8 bg-brand-black/90 backdrop-blur-sm">
+        <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="hover:opacity-80 transition-opacity block">
+                <img src="assets/logo.png" alt="CALUFIA" class="h-12 md:h-14 w-auto object-contain">
+            </a>
+            <nav class="flex flex-wrap justify-center gap-6 md:gap-12">
+                <a href="about.html"
+                    class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors text-white">About</a>
+                <a href="fabric.html"
+                    class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors text-white">Fabric</a>
+                <a href="leather.html" class="text-sm uppercase tracking-leisure text-brand-gray italic">Leather</a>
+                <!-- Active -->
+                <a href="finart.html"
+                    class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors text-white">FinArt</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero / Intro -->
+    <section class="pt-48 pb-32 container mx-auto px-6 md:px-12 reveal">
+        <div class="max-w-4xl">
+            <p class="font-sans text-xs text-brand-gray uppercase tracking-widest mb-6">The Present Evolution</p>
+            <h1 class="font-serif text-5xl md:text-7xl leading-tight mb-12">
+                Structured. Intentional.<br>Enduring.
+            </h1>
+            <p class="font-serif text-xl md:text-2xl text-brand-gray leading-relaxed max-w-2xl">
+                We are building the foundation of our accessories line. Each piece is a study in what is necessary and
+                what is beautiful.
+            </p>
+        </div>
+    </section>
+
+    <!-- Why Leather -->
+    <!-- Inspiration -->
+    <section class="py-20 md:py-32 bg-brand-dark text-center px-6">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="font-serif text-4xl md:text-5xl text-brand-light italic mb-8 reveal">Inspiration</h2>
+            <p class="text-brand-gray/80 leading-relaxed max-w-3xl mx-auto reveal delay-100 font-serif text-lg">
+                Calufia is inspired by a personal journey of resilience and creative freedom, transforming stories of
+                self-expression into timeless designs. Rooted deeply in Botswana’s Tswana culture, it celebrates local
+                leather craftsmanship and heritage, honoring the rich traditions and artisanal skills of the region.
+            </p>
+            <p class="text-brand-gray/80 leading-relaxed max-w-3xl mx-auto reveal delay-200 mt-6 font-serif text-lg">
+                Recognizing the growing global demand for authentic African luxury, Calufia aims to tap into this
+                emerging market by building scalable, high-quality products that showcase Botswana’s unique creativity
+                and economic potential on the world stage.
+            </p>
+        </div>
+    </section>
+
+    <!-- Leather Portfolio -->
+    <!-- Leather Portfolio -->
+    <section class="py-24 container mx-auto px-6 md:px-12">
+        <div class="grid md:grid-cols-3 gap-2">
+            <!-- Item 1 (Active Modal) -->
+            <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden reveal"
+                onclick="openModal('modal-1')">
+                <div class="absolute inset-0 overflow-hidden">
+                    <img src="assets/mmoloki-hanging-stone.jpg" alt="The Mmoloki Bag"
+                        class="w-full h-full object-cover card-zoom opacity-90 group-hover:opacity-100">
+                </div>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+                <div class="absolute bottom-8 left-8">
+                    <p class="font-sans text-xs text-brand-light tracking-widest uppercase mb-1">Flagship</p>
+                    <h3 class="font-serif text-3xl text-white italic">The Mmoloki</h3>
+                </div>
+            </div>
+
+            <!-- Item 2 (Detail View) -->
+            <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden reveal delay-100"
+                onclick="openModal('modal-1')">
+                <div class="absolute inset-0 overflow-hidden">
+                    <img src="assets/mmoloki-flatlay-shadows.jpg" alt="Mmoloki Detail"
+                        class="w-full h-full object-cover card-zoom opacity-90 group-hover:opacity-100">
+                </div>
+                <div class="absolute bottom-8 left-8">
+                    <p class="font-sans text-xs text-brand-light tracking-widest uppercase mb-1">Detail</p>
+                    <h3 class="font-serif text-3xl text-white italic">Structure</h3>
+                </div>
+            </div>
+
+            <!-- Item 3 (Lifestyle View) -->
+            <div class="group relative aspect-[3/4] cursor-pointer overflow-hidden reveal delay-200"
+                onclick="openModal('modal-1')">
+                <div class="absolute inset-0 overflow-hidden">
+                    <img src="assets/mmoloki-couch.jpg" alt="Mmoloki Lifestyle"
+                        class="w-full h-full object-cover card-zoom opacity-90 group-hover:opacity-100">
+                </div>
+                <div class="absolute bottom-8 left-8">
+                    <p class="font-sans text-xs text-brand-light tracking-widest uppercase mb-1">Lifestyle</p>
+                    <h3 class="font-serif text-3xl text-white italic">Movement</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Overlay -->
+    <div id="modal-1"
+        class="modal-backdrop fixed inset-0 z-[60] flex items-center justify-center p-4 bg-brand-black/60 opacity-0 pointer-events-none transition-opacity duration-700 backdrop-blur-sm">
+        <!-- Close Button -->
+        <button onclick="closeModal('modal-1')"
+            class="absolute top-8 right-8 text-white hover:text-brand-gray transition-colors z-50">
+            <span class="font-sans text-xs uppercase tracking-widest">Close</span>
+        </button>
+
+        <div
+            class="modal-content bg-brand-dark max-w-6xl w-full max-h-[90vh] overflow-y-auto flex flex-col md:flex-row shadow-2xl opacity-0 transform translate-y-10 scale-95 transition-all duration-700">
+            <!-- Modal Image -->
+            <div class="w-full md:w-5/12 h-64 md:h-auto relative">
+                <img src="assets/mmoloki-flatlay-ny.jpg" alt="The Mmoloki Bag"
+                    class="absolute inset-0 w-full h-full object-cover">
+            </div>
+
+            <!-- Modal Content -->
+            <div class="w-full md:w-7/12 p-10 md:p-14 flex flex-col justify-start space-y-8">
+                <div>
+                    <p class="font-sans text-xs text-brand-gray tracking-widest uppercase mb-2">The Flagship</p>
+                    <h2 class="font-serif text-4xl md:text-5xl text-brand-light italic">The Mmoloki</h2>
+                    <p class="text-brand-gray/60 italic mt-1 font-serif">"The Liberator"</p>
+                </div>
+
+                <div class="overflow-y-auto pr-4 space-y-8 custom-scrollbar">
+                    <!-- Origin Story -->
+                    <div class="space-y-4">
+                        <h3
+                            class="font-sans text-sm text-brand-light uppercase tracking-widest border-b border-brand-gray/20 pb-2">
+                            Origin Story</h3>
+                        <p class="text-brand-gray font-serif text-lg leading-relaxed">
+                            The Mmoloki Bag began as an experiment, a moment of creativity during my university days,
+                            when I took a burgundy corduroy dungaree dress and transformed it into something new. I
+                            sewed the bottom closed and wore it proudly. This was my first of many passion bag projects
+                            I made but never commercialized—but now it has become the soul of what Calufia stands for.
+                        </p>
+                    </div>
+
+                    <!-- Why It Matters -->
+                    <div class="space-y-4">
+                        <h3
+                            class="font-sans text-sm text-brand-light uppercase tracking-widest border-b border-brand-gray/20 pb-2">
+                            Why It Matters</h3>
+                        <p class="text-brand-gray font-serif text-lg leading-relaxed">
+                            Today, I am intentionally evolving that early design into Calufia’s signature flagship bag,
+                            The Mmoloki, meaning "The Liberator" in Setswana. It’s a tribute to where I started and
+                            where I’m going. It carries the story of a young woman turning grief into design, and
+                            creativity into structure.
+                        </p>
+                    </div>
+
+                    <!-- Word Breakdown -->
+                    <div class="bg-brand-black/30 p-6 border border-brand-gray/10 rounded-sm space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-serif text-2xl text-brand-white italic mb-1">Mmoloki</h4>
+                                <p class="text-xs text-brand-gray/50 uppercase tracking-widest mb-3">Noun | Setswana</p>
+                                <p class="text-brand-gray text-sm leading-relaxed">
+                                    Meaning: Liberator, savior, deliverer — one who sets others free from bondage,
+                                    oppression, or difficulty.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-xl text-brand-white italic mb-1">/ mmō-ló-kī /</h4>
+                                <p class="text-xs text-brand-gray/50 uppercase tracking-widest mb-3">Pronunciation</p>
+                                <p class="text-brand-gray text-sm leading-relaxed">
+                                    The "Mm" is a nasal sound. Stress falls on the 'ló'.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-brand-gray/10">
+                            <p class="italic text-brand-gray/70 text-sm">
+                                "Mmoloki wa setšhaba o tlisa kagiso." <br>
+                                <span
+                                    class="not-italic text-brand-gray/50 text-xs uppercase tracking-wider block mt-1">The
+                                    liberator of the nation brings peace.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Click outside to close area -->
+        <div class="absolute inset-0 -z-10" onclick="closeModal('modal-1')"></div>
+    </div>
+
+    <!-- Craft Process -->
+    <section class="py-32 bg-brand-dark text-brand-light reveal">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="mb-20 text-center">
+                <h2 class="font-serif text-3xl md:text-4xl italic mb-4">The Process</h2>
+                <div class="w-12 h-px bg-brand-gray mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-16 text-center">
+                <div class="space-y-6">
+                    <span class="font-sans text-4xl text-brand-gray/20 font-bold">01</span>
+                    <h3 class="font-serif text-2xl">Design</h3>
+                    <p class="text-sm text-brand-gray leading-relaxed max-w-xs mx-auto">
+                        Sketched with architectural precision. Form follows function, stripped of excess.
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <span class="font-sans text-4xl text-brand-gray/20 font-bold">02</span>
+                    <h3 class="font-serif text-2xl">Selection</h3>
+                    <p class="text-sm text-brand-gray leading-relaxed max-w-xs mx-auto">
+                        Only the finest full-grain hides are chosen. Imperfections are honored, ensuring each piece is
+                        unique.
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <span class="font-sans text-4xl text-brand-gray/20 font-bold">03</span>
+                    <h3 class="font-serif text-2xl">Production</h3>
+                    <p class="text-sm text-brand-gray leading-relaxed max-w-xs mx-auto">
+                        Cut and stitched by hand in our Cape Town atelier. A slow, meditative process of creation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-brand-dark py-12">
+        <div
+            class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-end md:items-center space-y-6 md:space-y-0">
+            <div class="text-xs text-brand-gray uppercase tracking-widest">
+                &copy; 2026 Calufia. All Rights Reserved.
+            </div>
+            <div class="flex space-x-6 text-xs uppercase tracking-widest text-brand-light">
+                <a href="https://www.instagram.com/calufia_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    target="_blank" class="hover:text-brand-gray transition-colors">Instagram</a>
+                <a href="https://www.linkedin.com/in/calufia-cla-9b23232a1/" target="_blank"
+                    class="hover:text-brand-gray transition-colors">LinkedIn</a>
+                <a href="mailto:calufiadesigns@gmail.com" class="hover:text-brand-gray transition-colors">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

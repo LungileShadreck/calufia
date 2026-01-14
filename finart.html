@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calufia FinArt | Financial Intelligence</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#1c1c1c',
+                            gray: '#888888',
+                            light: '#f5f5f5',
+                        }
+                    },
+                    letterSpacing: {
+                        widest: '.2em',
+                        leisure: '.1em',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 py-6 md:py-8 bg-brand-black/95 border-b border-brand-light/5">
+        <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="hover:opacity-80 transition-opacity block">
+                <img src="assets/logo.png" alt="CALUFIA" class="h-12 md:h-14 w-auto object-contain">
+            </a>
+            <nav class="flex flex-wrap justify-center gap-6 md:gap-12">
+                <a href="about.html"
+                    class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors text-white">About</a>
+                <a href="fabric.html"
+                    class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors text-white">Fabric</a>
+                <a href="leather.html"
+                    class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors text-white">Leather</a>
+                <a href="finart.html" class="text-sm uppercase tracking-leisure text-brand-gray italic">FinArt</a>
+                <!-- Active -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0">
+            <img src="assets/finart.png" alt="Abstract Finance"
+                class="w-full h-full object-cover opacity-40 grayscale contrast-125">
+            <div class="absolute inset-0 bg-brand-black/60"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-3xl reveal reveal-sm">
+            <span class="block font-sans text-xs text-brand-gray uppercase tracking-widest mb-6">Financial
+                Service</span>
+            <h1 class="font-serif text-4xl md:text-6xl mb-8 leading-tight">
+                Structure. Intelligence.<br>Empowerment.
+            </h1>
+        </div>
+    </section>
+
+    <!-- What It Is -->
+    <section class="py-24 container mx-auto px-6 md:px-12 text-center border-b border-brand-light/10 reveal reveal-sm">
+        <p class="font-serif text-2xl md:text-3xl leading-relaxed max-w-4xl mx-auto text-brand-light/90">
+            Calufia FinArt provides bespoke financial management and strategic planning for creatives, founders, and
+            cultural start-ups.
+        </p>
+    </section>
+
+    <!-- Who & Problems (Grid Layout) -->
+    <section class="py-24 container mx-auto px-6 md:px-12">
+        <div class="grid md:grid-cols-2 gap-16 md:gap-24">
+
+            <!-- Who It Serves -->
+            <div class="space-y-12 reveal reveal-sm delay-100">
+                <h3
+                    class="font-sans text-xs uppercase tracking-widest text-brand-gray border-b border-brand-gray/30 pb-4">
+                    Client Profile</h3>
+
+                <div class="space-y-8">
+                    <div>
+                        <h4 class="font-serif text-2xl text-white mb-2">Creatives</h4>
+                        <p class="text-sm text-brand-gray">Artists, designers, and artisans seeking to sustain their
+                            practice.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-2xl text-white mb-2">Startups</h4>
+                        <p class="text-sm text-brand-gray">Early-stage ventures requiring robust economic modeling.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problems Solved -->
+            <div class="space-y-12 reveal reveal-sm delay-200">
+                <h3
+                    class="font-sans text-xs uppercase tracking-widest text-brand-gray border-b border-brand-gray/30 pb-4">
+                    Solutions</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-serif text-xl text-white mb-2">Cash Flow</h4>
+                        <p class="text-sm text-brand-gray">Predictability in fluid markets.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-xl text-white mb-2">Pricing Strategy</h4>
+                        <p class="text-sm text-brand-gray">Valuing time and craft correctly.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-xl text-white mb-2">Resource Allocation</h4>
+                        <p class="text-sm text-brand-gray">Optimizing for growth and stability.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-xl text-white mb-2">Debt Management</h4>
+                        <p class="text-sm text-brand-gray">Leveraging capital responsibly.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Alignment & Vision -->
+    <section class="py-32 bg-brand-dark/50 reveal reveal-sm">
+        <div class="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center">
+
+            <div class="space-y-8">
+                <h2 class="font-serif text-3xl md:text-4xl italic mb-6">The Calufia Alignment</h2>
+                <p class="text-brand-gray leading-relaxed text-lg font-serif">
+                    Sustainability is not just about materials; it is about economic viability.
+                    We believe that for creativity to endure, it must be supported by a spine of financial intelligence.
+                </p>
+                <ul class="space-y-4 pt-4">
+                    <li class="flex items-center text-sm font-sans uppercase tracking-widest text-brand-light">
+                        <span class="w-1.5 h-1.5 bg-brand-gray rounded-full mr-4"></span>Long-term Thinking
+                    </li>
+                    <li class="flex items-center text-sm font-sans uppercase tracking-widest text-brand-light">
+                        <span class="w-1.5 h-1.5 bg-brand-gray rounded-full mr-4"></span>Economic Empowerment
+                    </li>
+                </ul>
+            </div>
+
+            <div class="border border-brand-light/10 p-12 text-center">
+                <p class="font-sans text-xs text-brand-gray uppercase tracking-widest mb-6">Our Vision</p>
+                <h3 class="font-serif text-3xl leading-snug">
+                    "To build a world where creative vision is never limited by financial opacity."
+                </h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-brand-dark py-12">
+        <div
+            class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-end md:items-center space-y-6 md:space-y-0">
+            <div class="text-xs text-brand-gray uppercase tracking-widest">
+                &copy; 2026 Calufia FinArt. All Rights Reserved.
+            </div>
+            <div class="flex space-x-6 text-xs uppercase tracking-widest text-brand-light">
+                <a href="https://www.instagram.com/calufia_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    target="_blank" class="hover:text-brand-gray transition-colors">Instagram</a>
+                <a href="https://www.linkedin.com/in/calufia-cla-9b23232a1/" target="_blank"
+                    class="hover:text-brand-gray transition-colors">LinkedIn</a>
+                <a href="mailto:calufiadesigns@gmail.com" class="hover:text-brand-gray transition-colors">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
