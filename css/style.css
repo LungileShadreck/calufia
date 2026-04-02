@@ -59,3 +59,60 @@ body {
 .group:hover .hover-fade-target {
     opacity: 1;
 }
+
+/* Chatbase Custom Launcher Override */
+#chatbase-bubble-button {
+    background-color: transparent !important;
+    background-image: url('../assets/C Logo white Icon-02.png') !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 50% !important;
+    width: 56px !important;
+    height: 56px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    transition: transform 0.3s ease !important;
+    animation: calubot-pulse 15s infinite !important;
+}
+
+#chatbase-bubble-button:hover {
+    transform: scale(1.1) !important;
+    animation: none !important;
+}
+
+#chatbase-bubble-button svg,
+#chatbase-bubble-button img {
+    display: none !important;
+}
+
+#chatbase-bubble-button::before {
+    content: "Ask CaluBot";
+    position: absolute;
+    bottom: 110%;
+    right: 50%;
+    transform: translateX(50%) translateY(10px);
+    background-color: #1c1c1c;
+    color: #f5f5f5;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border: 1px solid rgba(136, 136, 136, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#chatbase-bubble-button:hover::before {
+    opacity: 1;
+    transform: translateX(50%) translateY(0);
+}
+
+@keyframes calubot-pulse {
+    0% { transform: scale(1); box-shadow: 0 4px 12px rgba(212, 175, 55, 0); }
+    3% { transform: scale(1.05); box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3); }
+    6% { transform: scale(1); box-shadow: 0 4px 12px rgba(212, 175, 55, 0); }
+    100% { transform: scale(1); box-shadow: 0 4px 12px rgba(212, 175, 55, 0); }
+}

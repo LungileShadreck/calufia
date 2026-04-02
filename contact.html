@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | CALUFIA</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/C Logo white Icon-02.png" type="image/png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#1c1c1c',
+                            gray: '#888888',
+                            light: '#f5f5f5',
+                        }
+                    },
+                    letterSpacing: {
+                        widest: '.2em',
+                        leisure: '.1em',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Fallback hide text when iframe loads (using mix-blend) */
+        .fade-out-on-load { opacity: 0; animation: fadeOutPlaceholder 5s forwards; }
+        @keyframes fadeOutPlaceholder { 0% { opacity: 1; } 50% { opacity: 1; } 100% { opacity: 0; } }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 py-4 md:py-8 mix-blend-difference text-white transition-colors duration-300">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="index.html" class="hover:opacity-80 transition-opacity block z-50">
+                <img src="assets/logo.png" alt="CALUFIA" class="h-10 md:h-14 w-auto object-contain">
+            </a>
+            
+            <button id="mobile-menu-btn" class="md:hidden z-50 p-2 focus:outline-none text-white">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            
+            <nav id="nav-menu" class="hidden w-full absolute top-full left-0 flex-col items-center gap-6 py-10 bg-brand-black md:static md:w-auto md:bg-transparent md:flex md:flex-row md:py-0 md:gap-8 shadow-2xl md:shadow-none border-b border-brand-dark md:border-none">
+                <a href="about.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">About</a>
+                <a href="fabric.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">Fabric</a>
+                <a href="leather.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">Leather</a>
+                <a href="finart.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">FinArt</a>
+                <a href="order.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">Order</a>
+                <a href="contact.html" class="text-sm uppercase tracking-leisure text-brand-gray italic">Contact</a>
+                <a href="digital-atelier.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">Digital Atelier</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-[50vh] flex flex-col justify-center items-center text-center px-6 pt-32 pb-16 reveal relative">
+        <p class="font-sans text-brand-gray text-xs uppercase tracking-widest mb-4 delay-100">Connect</p>
+        <h1 class="font-serif text-4xl md:text-6xl leading-tight delay-200 mb-6">
+            Initiate Contact
+        </h1>
+        <p class="font-sans text-brand-gray max-w-2xl mx-auto leading-relaxed delay-300">
+            We invite collaborations, inquiries, and conversations that align with our philosophy. <br class="hidden md:block">
+            Connect with Calufia below.
+        </p>
+    </section>
+
+    <!-- Main Content -->
+    <section class="container mx-auto px-6 md:px-12 py-12 md:py-24 grid md:grid-cols-2 gap-16 md:gap-24 mb-12">
+        
+        <!-- Contact Details -->
+        <div class="space-y-12 reveal">
+            <div>
+                <h2 class="font-serif text-3xl italic text-brand-light mb-8">Direct Access</h2>
+                <div class="w-12 h-px bg-brand-gray mb-8"></div>
+            </div>
+
+            <div class="space-y-8">
+                <div>
+                    <span class="block font-sans text-xs text-brand-gray tracking-widest uppercase mb-2">Email</span>
+                    <a href="mailto:calufiadesigns@gmail.com" class="font-sans text-lg text-white hover:text-brand-gray transition-colors">calufiadesigns@gmail.com</a>
+                </div>
+                <div>
+                    <span class="block font-sans text-xs text-brand-gray tracking-widest uppercase mb-2">Phone</span>
+                    <a href="tel:+26771435744" class="font-sans text-lg text-white hover:text-brand-gray transition-colors">+267 71 435 744</a>
+                </div>
+                <div>
+                    <span class="block font-sans text-xs text-brand-gray tracking-widest uppercase mb-2">Location</span>
+                    <p class="font-sans text-lg text-white">Gaborone, Botswana</p>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-brand-gray/20">
+                <span class="block font-sans text-xs text-brand-gray tracking-widest uppercase mb-4">Social</span>
+                <div class="flex space-x-6 text-sm uppercase tracking-widest">
+                    <a href="https://www.instagram.com/calufia_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="text-white hover:text-brand-gray transition-colors">Instagram</a>
+                    <a href="https://www.linkedin.com/in/calufia-cla-9b23232a1/" target="_blank" class="text-white hover:text-brand-gray transition-colors">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Google Form Embed -->
+        <div class="reveal delay-200">
+            <div class="bg-brand-dark rounded-sm overflow-hidden h-full min-h-[600px] border border-brand-gray/10 relative">
+                <!-- Replace src with actual Google Form embedded link -->
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe4xK_N6rXpX_-w32g2YdOIfKXX2YmS/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" class="absolute inset-0 w-full h-full opacity-90 transition-opacity hover:opacity-100 z-10" title="Contact Form">Loading Form...</iframe>
+                
+                <!-- Fallback/Overlay when generic form URL fails -->
+                <div class="absolute inset-0 bg-brand-dark flex flex-col justify-center items-center text-center p-8 pointer-events-none fade-out-on-load z-0">
+                    <div class="w-8 h-px bg-brand-gray mb-6"></div>
+                    <p class="font-serif text-xl italic text-brand-light mb-4 text-center">Inquiry Form</p>
+                    <p class="font-sans text-brand-gray text-xs tracking-widest uppercase leading-loose text-center">
+                        (Replace iframe URL with your active Google Form link in <code>contact.html</code>)
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-brand-dark bg-brand-black text-brand-light py-12 md:py-16 mt-auto">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+                <div class="space-y-4">
+                    <a href="index.html" class="font-serif text-2xl font-bold tracking-widest uppercase">Calufia</a>
+                    <p class="text-xs text-brand-gray uppercase tracking-widest max-w-xs leading-loose">
+                        Botswana, Gaborone<br>
+                        calufiadesigns@gmail.com<br>
+                        +267 71 435 744
+                    </p>
+                </div>
+                <div class="flex space-x-8 text-xs uppercase tracking-widest text-brand-light">
+                    <a href="https://www.instagram.com/calufia_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-brand-gray transition-colors">Instagram</a>
+                    <a href="https://www.linkedin.com/in/calufia-cla-9b23232a1/" target="_blank" class="hover:text-brand-gray transition-colors">LinkedIn</a>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-brand-dark/50 flex justify-between text-xs text-brand-gray uppercase tracking-widest">
+                <span>&copy; 2026 Calufia Ecosystem.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Scripts -->
+    <script src="js/main.js"></script>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="g79SkRMmGV9vj3HLpKRHG";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+</body>
+</html>

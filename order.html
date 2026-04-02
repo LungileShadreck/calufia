@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Bespoke | CALUFIA</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/C Logo white Icon-02.png" type="image/png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#1c1c1c',
+                            gray: '#888888',
+                            light: '#f5f5f5',
+                        }
+                    },
+                    letterSpacing: {
+                        widest: '.2em',
+                        leisure: '.1em',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="flex flex-col min-h-screen bg-brand-black text-white">
+
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 py-4 md:py-8 mix-blend-difference text-white transition-colors duration-300">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="index.html" class="hover:opacity-80 transition-opacity block z-50">
+                <img src="assets/logo.png" alt="CALUFIA" class="h-10 md:h-14 w-auto object-contain">
+            </a>
+            
+            <button id="mobile-menu-btn" class="md:hidden z-50 p-2 focus:outline-none text-white">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            
+            <nav id="nav-menu" class="hidden w-full absolute top-full left-0 flex-col items-center gap-6 py-10 bg-brand-black md:static md:w-auto md:bg-transparent md:flex md:flex-row md:py-0 md:gap-8 shadow-2xl md:shadow-none border-b border-brand-dark md:border-none">
+                <a href="about.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">About</a>
+                <a href="fabric.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">Fabric</a>
+                <a href="leather.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">Leather</a>
+                <a href="finart.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">FinArt</a>
+                <a href="order.html" class="text-sm uppercase tracking-leisure text-brand-gray italic">Order</a>
+                <a href="contact.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">Contact</a>
+                <a href="digital-atelier.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">Digital Atelier</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-[50vh] flex flex-col justify-center items-center text-center px-6 pt-40 pb-16 reveal relative">
+        <div class="absolute inset-0 z-0">
+            <!-- Background aesthetic element -->
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-dark to-brand-black opacity-50"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl">
+            <p class="font-sans text-brand-gray text-xs uppercase tracking-widest mb-4 delay-100">Couture & Craft</p>
+            <h1 class="font-serif text-4xl md:text-6xl leading-tight delay-200 mb-6">
+                Bespoke Orders
+            </h1>
+            <p class="font-sans text-brand-gray max-w-2xl mx-auto leading-relaxed delay-300">
+                True luxury is personal. Submit your custom request for exclusive garments, tailored suits, or artisanal leather pieces below. We will guide you from concept to creation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mini Catalogue / Inspiration -->
+    <section class="py-12 bg-brand-dark/30 border-y border-brand-gray/10 reveal delay-200">
+        <div class="container mx-auto px-6 md:px-12">
+            <p class="font-serif text-2xl text-center italic text-brand-light mb-12">Ateliers Inspiration</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Catalog Item 1 -->
+                <div class="group relative aspect-[3/4] overflow-hidden cursor-default">
+                    <img src="assets/hannah-dress-full.jpg" alt="Dresses" class="w-full h-full object-cover card-zoom opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <h4 class="font-serif text-2xl italic mb-1 text-white">Occasion Wear</h4>
+                        <p class="font-sans text-xs text-brand-gray uppercase tracking-widest">Dresses & Gowns</p>
+                    </div>
+                </div>
+                <!-- Catalog Item 2 -->
+                <div class="group relative aspect-[3/4] overflow-hidden cursor-default">
+                    <img src="assets/timeless-bangu-full.jpg" alt="Suits" class="w-full h-full object-cover card-zoom opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <h4 class="font-serif text-2xl italic mb-1 text-white">Tailored Suits</h4>
+                        <p class="font-sans text-xs text-brand-gray uppercase tracking-widest">Structural Elegance</p>
+                    </div>
+                </div>
+                <!-- Catalog Item 3 -->
+                <div class="group relative aspect-[3/4] overflow-hidden cursor-default">
+                    <img src="assets/mmoloki-hanging-stone.jpg" alt="Leather" class="w-full h-full object-cover card-zoom opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <h4 class="font-serif text-2xl italic mb-1 text-white">Leather Goods</h4>
+                        <p class="font-sans text-xs text-brand-gray uppercase tracking-widest">Artisanal Craftsmanship</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Order Form Section -->
+    <section class="py-24 container mx-auto px-6 md:px-12 reveal">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="font-serif text-3xl italic text-brand-light">Start Your Commission</h2>
+                <div class="w-12 h-px bg-brand-gray mx-auto"></div>
+                <p class="font-sans text-sm text-brand-gray pt-4">Your request will be securely sent directly to our WhatsApp Business concierges for immediate, personalized attention.</p>
+            </div>
+
+            <!-- Form -->
+            <form id="orderForm" class="space-y-10">
+                <!-- Grid Info -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Name -->
+                    <div class="space-y-2">
+                        <label for="name" class="block font-sans text-xs text-brand-gray tracking-widest uppercase">Full Name *</label>
+                        <input type="text" id="name" required class="w-full bg-transparent border-b border-brand-gray/30 focus:border-white outline-none py-3 text-white font-serif text-lg transition-colors placeholder-brand-gray/30" placeholder="Your Name">
+                    </div>
+                    <!-- Phone -->
+                    <div class="space-y-2">
+                        <label for="phone" class="block font-sans text-xs text-brand-gray tracking-widest uppercase">Phone / WhatsApp *</label>
+                        <input type="tel" id="phone" required class="w-full bg-transparent border-b border-brand-gray/30 focus:border-white outline-none py-3 text-white font-serif text-lg transition-colors placeholder-brand-gray/30" placeholder="+267...">
+                    </div>
+                    <!-- Email -->
+                    <div class="space-y-2">
+                        <label for="email" class="block font-sans text-xs text-brand-gray tracking-widest uppercase">Email Address *</label>
+                        <input type="email" id="email" required class="w-full bg-transparent border-b border-brand-gray/30 focus:border-white outline-none py-3 text-white font-serif text-lg transition-colors placeholder-brand-gray/30" placeholder="your@email.com">
+                    </div>
+                    <!-- Category -->
+                    <div class="space-y-2">
+                        <label for="category" class="block font-sans text-xs text-brand-gray tracking-widest uppercase">Item Category *</label>
+                        <select id="category" required class="w-full bg-transparent border-b border-brand-gray/30 focus:border-white outline-none py-3 text-white font-serif text-lg transition-colors appearance-none pr-8 cursor-pointer">
+                            <option value="" disabled selected class="text-black bg-white">Select a category</option>
+                            <option value="Dress" class="text-black bg-white">Dress</option>
+                            <option value="Suit" class="text-black bg-white">Suit</option>
+                            <option value="Custom Fabric" class="text-black bg-white">Custom Fabric</option>
+                            <option value="Leather Bag" class="text-black bg-white">Leather Bag</option>
+                            <option value="Other" class="text-black bg-white">Other</option>
+                        </select>
+                    </div>
+                    <!-- Size -->
+                    <div class="space-y-2">
+                        <label for="size" class="block font-sans text-xs text-brand-gray tracking-widest uppercase">Size / Measurements</label>
+                        <input type="text" id="size" class="w-full bg-transparent border-b border-brand-gray/30 focus:border-white outline-none py-3 text-white font-serif text-lg transition-colors placeholder-brand-gray/30" placeholder="e.g. Medium, UK 10, or exact measurements">
+                    </div>
+                    <!-- Budget -->
+                    <div class="space-y-2">
+                        <label for="budget" class="block font-sans text-xs text-brand-gray tracking-widest uppercase">Budget Range</label>
+                        <input type="text" id="budget" class="w-full bg-transparent border-b border-brand-gray/30 focus:border-white outline-none py-3 text-white font-serif text-lg transition-colors placeholder-brand-gray/30" placeholder="e.g. BWP 2000 - 5000">
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="space-y-2">
+                    <label for="description" class="block font-sans text-xs text-brand-gray tracking-widest uppercase">Description of Request *</label>
+                    <textarea id="description" required rows="4" class="w-full bg-transparent border-b border-brand-gray/30 focus:border-white outline-none py-3 text-white font-serif text-lg transition-colors placeholder-brand-gray/30 resize-none custom-scrollbar" placeholder="Describe the style, occasion, colors, or materials you have in mind..."></textarea>
+                </div>
+
+                <!-- Image Upload (Optional) -->
+                <div class="space-y-2 bg-brand-dark/20 p-6 border border-brand-gray/10">
+                    <label class="block font-sans text-xs text-brand-gray tracking-widest uppercase mb-1">Inspiration Image (Optional)</label>
+                    <p class="font-sans text-xs text-brand-gray/60 mb-4">Select an image to let us know you have styling references. You will attach this image directly during the WhatsApp chat.</p>
+                    <input type="file" id="imageUpload" accept="image/*" class="font-sans text-sm text-brand-light file:mr-4 file:py-2 file:px-4 file:rounded-none file:bg-white file:text-brand-black file:border-0 file:text-xs file:font-semibold file:uppercase file:tracking-widest file:cursor-pointer hover:file:bg-brand-gray hover:file:text-white transition-all cursor-pointer">
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-8 text-center">
+                    <button type="submit" class="group relative inline-flex items-center justify-center px-10 py-4 font-sans text-xs uppercase tracking-widest overflow-hidden border border-brand-light/20 bg-transparent text-brand-light transition-all duration-300 hover:border-brand-light hover:bg-white hover:text-black">
+                        <span class="relative z-10 flex items-center gap-2">
+                            Request Consultation via WhatsApp
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </span>
+                    </button>
+                    <p class="font-sans text-[10px] text-brand-gray tracking-widest uppercase mt-6">You will be redirected shortly.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-brand-dark bg-brand-black text-brand-light py-12 md:py-16 mt-auto">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+                <div class="space-y-4">
+                    <a href="index.html" class="font-serif text-2xl font-bold tracking-widest uppercase">Calufia</a>
+                    <p class="text-xs text-brand-gray uppercase tracking-widest max-w-xs leading-loose">
+                        Botswana, Gaborone<br>
+                        calufiadesigns@gmail.com<br>
+                        +267 71 435 744
+                    </p>
+                </div>
+                <div class="flex space-x-8 text-xs uppercase tracking-widest text-brand-light">
+                    <a href="https://www.instagram.com/calufia_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-brand-gray transition-colors">Instagram</a>
+                    <a href="https://www.linkedin.com/in/calufia-cla-9b23232a1/" target="_blank" class="hover:text-brand-gray transition-colors">LinkedIn</a>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-brand-dark/50 flex justify-between text-xs text-brand-gray uppercase tracking-widest">
+                <span>&copy; 2026 Calufia Ecosystem.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- WhatsApp Form Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('orderForm');
+            if(form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('name').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const category = document.getElementById('category').value;
+                    const size = document.getElementById('size').value.trim() || 'Not provided';
+                    const budget = document.getElementById('budget').value.trim() || 'Not provided';
+                    const description = document.getElementById('description').value.trim();
+                    const imageUpload = document.getElementById('imageUpload').files.length > 0;
+                    
+                    let message = `*Calufia Custom Order Request*\n`;
+                    message += `-----------------------------------\n`;
+                    message += `*Name:* ${name}\n`;
+                    message += `*Phone:* ${phone}\n`;
+                    message += `*Email:* ${email}\n\n`;
+                    message += `*Item Category:* ${category}\n`;
+                    message += `*Size:* ${size}\n`;
+                    message += `*Budget Range:* ${budget}\n\n`;
+                    message += `*Description:*\n${description}\n`;
+                    
+                    if(imageUpload) {
+                        message += `\n_(I have an inspiration image ready to attach in this chat.)_`;
+                    }
+                    
+                    message += `\n-----------------------------------\n`;
+                    message += `Looking forward to discussing the design!`;
+                    
+                    const encodedMessage = encodeURIComponent(message);
+                    const whatsappNumber = "26771435744"; 
+                    
+                    // Create the WhatsApp URL
+                    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                    
+                    // Open in new tab/app
+                    window.open(whatsappURL, '_blank');
+                    
+                    // Optional: Reset form after success
+                    // form.reset();
+                });
+            }
+        });
+    </script>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="g79SkRMmGV9vj3HLpKRHG";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+</body>
+</html>

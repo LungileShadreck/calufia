@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Atelier | CALUFIA</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/C Logo white Icon-02.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#1c1c1c',
+                            gray: '#888888',
+                            light: '#f5f5f5',
+                            gold: '#d4af37',
+                            nude: '#F5E6DA',
+                            burgundy: '#5B1E2B'
+                        }
+                    },
+                    letterSpacing: {
+                        widest: '.2em',
+                        leisure: '.1em',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Hide file input */
+        #silhouette-upload { display: none; }
+        
+        /* Selection Highlight */
+        .garment-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+        .garment-card.active {
+            border-color: #5B1E2B;
+            background-color: rgba(91, 30, 43, 0.03);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(91, 30, 43, 0.05);
+        }
+        .garment-card.active img {
+            border: 2px solid #5B1E2B;
+        }
+        
+        /* Loader */
+        .loader {
+            border: 2px solid rgba(91, 30, 43, 0.1);
+            border-top-color: #5B1E2B;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            animation: spin 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        @keyframes spin { 
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Subtle Progress Indicator */
+        @keyframes progress-slide {
+            0% { left: -50%; }
+            100% { left: 100%; }
+        }
+        .progress-indicator {
+            animation: progress-slide 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen bg-brand-light text-brand-black transition-colors duration-500" style="background-color: #F8F4F0;">
+
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 py-4 md:py-8 mix-blend-difference text-white transition-colors duration-300">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="index.html" class="hover:opacity-80 transition-opacity block z-50">
+                <img src="assets/logo.png" alt="CALUFIA" class="h-10 md:h-14 w-auto object-contain">
+            </a>
+            
+            <button id="mobile-menu-btn" class="md:hidden z-50 p-2 focus:outline-none text-white">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            
+            <nav id="nav-menu" class="hidden w-full absolute top-full left-0 flex-col items-center gap-6 py-10 bg-brand-black md:static md:w-auto md:bg-transparent md:flex md:flex-row md:py-0 md:gap-8 shadow-2xl md:shadow-none border-b border-brand-dark md:border-none">
+                <a href="about.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">About</a>
+                <a href="fabric.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">Fabric</a>
+                <a href="leather.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">Leather</a>
+                <a href="finart.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">FinArt</a>
+                <a href="order.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">Order</a>
+                <a href="contact.html" class="text-sm uppercase tracking-leisure hover:text-brand-gray transition-colors">Contact</a>
+                <a href="digital-atelier.html" class="text-sm uppercase tracking-leisure text-brand-gold italic">Digital Atelier</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-6 md:px-12 text-center reveal">
+        <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-burgundy mb-6 leading-tight">
+            The Calufia Digital Atelier
+        </h1>
+        <p class="font-sans text-brand-black/70 text-sm md:text-base tracking-leisure uppercase delay-100 reveal">
+            Experience Calufia designs on your own silhouette.
+        </p>
+        <div class="w-12 h-px bg-brand-burgundy/30 mx-auto mt-8 delay-200 reveal"></div>
+    </section>
+
+    <!-- Atelier Workspace -->
+    <section class="container mx-auto px-6 md:px-12 pb-24 max-w-5xl">
+        <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+            
+            <!-- Left Column: Upload -->
+            <div class="space-y-8 reveal delay-100">
+                <h2 class="font-serif text-2xl text-brand-burgundy italic border-b border-brand-burgundy/20 pb-4">1. Submit Your Silhouette</h2>
+                
+                <div class="group relative">
+                    <label for="silhouette-upload" class="block w-full aspect-[3/4] md:aspect-square border border-dashed border-brand-burgundy/40 rounded-sm bg-white/50 hover:bg-white transition-colors duration-300 cursor-pointer flex flex-col items-center justify-center p-8 text-center overflow-hidden" id="upload-container">
+                        
+                        <div id="upload-prompt" class="space-y-4 flex flex-col items-center transition-opacity duration-300">
+                            <svg class="w-8 h-8 text-brand-burgundy/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span class="font-sans text-xs uppercase tracking-widest text-brand-burgundy">Upload Image</span>
+                            <p class="font-sans text-xs text-brand-black/50 leading-relaxed max-w-[200px]">Optimal results with full body shots against plain backgrounds.</p>
+                        </div>
+
+                        <!-- Image Preview -->
+                        <img id="image-preview" src="" alt="Silhouette Preview" class="absolute inset-0 w-full h-full object-cover hidden">
+                        
+                        <!-- Change Image Overlay -->
+                        <div id="change-image-overlay" class="absolute inset-0 bg-brand-burgundy/80 hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="font-sans text-xs uppercase tracking-widest text-white">Change Silhouette</span>
+                        </div>
+                    </label>
+                    <input type="file" id="silhouette-upload" accept="image/*">
+                </div>
+            </div>
+
+            <!-- Right Column: Garments & Generation -->
+            <div class="space-y-12 reveal delay-200">
+                
+                <div class="space-y-6">
+                    <h2 class="font-serif text-2xl text-brand-burgundy italic border-b border-brand-burgundy/20 pb-4">2. Select Garment</h2>
+                    
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4" id="garment-grid">
+                        <!-- Garment Options -->
+                        <div class="garment-card p-3 rounded-sm" data-garment="Timeless">
+                            <div class="aspect-[3/4] mb-3 overflow-hidden bg-white/50">
+                                <img src="assets/fabric.png" alt="Timeless" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="garment-title font-sans text-xs text-brand-black/70 tracking-widest uppercase text-center mt-3">Timeless</h3>
+                        </div>
+                        
+                        <div class="garment-card p-3 rounded-sm" data-garment="Elegant">
+                            <div class="aspect-[3/4] mb-3 overflow-hidden bg-white/50">
+                                <img src="assets/leather.png" alt="Elegant" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="garment-title font-sans text-xs text-brand-black/70 tracking-widest uppercase text-center mt-3">Elegant</h3>
+                        </div>
+
+                        <div class="garment-card p-3 rounded-sm" data-garment="Glamour">
+                            <div class="aspect-[3/4] mb-3 overflow-hidden bg-white/50">
+                                <img src="assets/finart.png" alt="Glamour" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="garment-title font-sans text-xs text-brand-black/70 tracking-widest uppercase text-center mt-3">Glamour</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Generate Action -->
+                <div class="pt-8">
+                    <button id="generate-btn" disabled class="w-full py-4 bg-brand-burgundy text-white font-sans text-xs uppercase tracking-widest hover:bg-opacity-90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-3">
+                        <span id="generate-btn-text">Create My Look</span>
+                    </button>
+                    
+                    <!-- Loading State -->
+                    <div id="loading-state" class="hidden flex-col items-center mt-8 space-y-6">
+                        <p class="font-serif text-brand-burgundy italic text-lg opacity-90 animate-pulse">Our atelier is tailoring your look...</p>
+                        <!-- Subtle progress track -->
+                        <div class="w-48 h-[1px] bg-brand-burgundy/10 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 h-full w-1/3 bg-brand-burgundy progress-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Result Display (Hidden initially) -->
+    <section id="result-section" class="hidden bg-white py-24 border-t border-brand-burgundy/10 transition-opacity duration-1000 opacity-0">
+        <div class="container mx-auto px-6 md:px-12 text-center">
+            
+            <h2 class="font-serif text-3xl md:text-5xl text-brand-burgundy mb-12 italic reveal">Your Calufia Look</h2>
+            
+            <!-- Large Editorial Style Frame -->
+            <div class="max-w-3xl mx-auto bg-[#F8F4F0] p-4 md:p-8 shadow-2xl reveal delay-100 mb-12">
+                <div class="border border-brand-burgundy/20 relative aspect-[3/4] overflow-hidden">
+                    <img id="generated-result-image" src="" alt="Generated Calufia Look" class="w-full h-full object-cover">
+                    <!-- Brand Watermark -->
+                    <div class="absolute bottom-6 right-6 font-serif text-xs text-white mix-blend-difference tracking-widest uppercase opacity-80">
+                        C A L U F I A
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 reveal delay-200">
+                <a id="download-btn" href="#" download="calufia-atelier-look.jpg" class="px-8 py-3 border border-brand-burgundy text-brand-burgundy font-sans text-xs uppercase tracking-widest hover:bg-brand-burgundy hover:text-white transition-colors duration-300 w-full sm:w-auto">
+                    Download Image
+                </a>
+                
+                <a id="whatsapp-order-btn" href="#" target="_blank" class="px-8 py-3 bg-brand-burgundy text-white font-sans text-xs uppercase tracking-widest hover:bg-opacity-90 transition-colors duration-300 w-full sm:w-auto flex items-center justify-center space-x-2">
+                    <!-- WhatsApp Icon -->
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 001.761 6.273L.268 23.4l5.247-1.373A11.94 11.94 0 0011.944 24a12 12 0 000-24zm0 20.045a7.99 7.99 0 01-4.08-1.12l-2.924.766.78-2.85A7.95 7.95 0 014 12a7.95 7.95 0 017.944-7.942A7.95 7.95 0 0119.889 12a7.95 7.95 0 01-7.945 8.045zm4.288-5.833c-.234-.117-1.383-.682-1.597-.76-.214-.078-.37-.117-.525.117-.156.234-.604.76-.74.916-.136.155-.272.175-.506.058-1.047-.514-1.898-1.282-2.583-2.316-.178-.266.173-.242.632-1.157.078-.156.039-.292-.02-.408-.058-.117-.525-1.266-.72-1.734-.19-.459-.383-.396-.525-.403h-.447c-.156 0-.408.058-.622.292-.214.234-.817.798-.817 1.946s.836 2.258.953 2.414c.117.155 1.634 2.508 3.96 3.513 1.343.58 1.933.626 2.651.527.705-.097 2.126-.867 2.424-1.705.298-.839.298-1.558.21-1.706-.088-.148-.322-.226-.556-.343z"/></svg>
+                    <span>Order This Look</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-brand-burgundy/10 bg-brand-black text-brand-light py-12 md:py-16 mt-auto">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+                <div class="space-y-4">
+                    <a href="index.html" class="font-serif text-2xl font-bold tracking-widest uppercase">Calufia</a>
+                    <p class="text-xs text-brand-gray uppercase tracking-widest max-w-xs leading-loose">
+                        Botswana, Gaborone<br>
+                        calufiadesigns@gmail.com<br>
+                        +267 76 952 613
+                    </p>
+                </div>
+                <div class="flex space-x-8 text-xs uppercase tracking-widest text-brand-light">
+                    <a href="https://www.instagram.com/calufia_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-brand-gray transition-colors">Instagram</a>
+                    <a href="https://www.linkedin.com/in/calufia-cla-9b23232a1/" target="_blank" class="hover:text-brand-gray transition-colors">LinkedIn</a>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-brand-dark/50 flex justify-between text-xs text-brand-gray uppercase tracking-widest">
+                <span>&copy; 2026 Calufia Ecosystem.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/atelier.js"></script>
+</body>
+</html>

@@ -29,4 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // Mobile Menu Toggle Logic
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    const header = document.querySelector('header');
+    
+    if(mobileBtn && navMenu && header) {
+        mobileBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+            navMenu.classList.toggle('flex');
+            header.classList.toggle('mix-blend-difference');
+            header.classList.toggle('bg-brand-black');
+        });
+    }
+
 });
