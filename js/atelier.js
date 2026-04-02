@@ -15,18 +15,51 @@ document.addEventListener('DOMContentLoaded', () => {
     let uploadedImageBase64 = null;
     let selectedGarment = null;
 
-    // 1. Handle Image Upload
+    // 1. Handle Image Upload & Compress
     uploadInput.addEventListener('change', function(e) {
         const file = e.target.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = function(event) {
-                uploadedImageBase64 = event.target.result;
-                imagePreview.src = uploadedImageBase64;
-                imagePreview.classList.remove('hidden');
-                uploadPrompt.classList.add('hidden');
-                
-                checkReadyState();
+                // Initialize an Image object to handle dimensions
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const MAX_WIDTH = 1024;
+                    const MAX_HEIGHT = 1024;
+                    let width = img.width;
+                    let height = img.height;
+
+                    // Calculate proportional resize
+                    if (width > height) {
+                        if (width > MAX_WIDTH) {
+                            height *= MAX_WIDTH / width;
+                            width = MAX_WIDTH;
+                        }
+                    } else {
+                        if (height > MAX_HEIGHT) {
+                            width *= MAX_HEIGHT / height;
+                            height = MAX_HEIGHT;
+                        }
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    // Re-encode downscaled image as highly compressed JPEG
+                    uploadedImageBase64 = canvas.toDataURL('image/jpeg', 0.8);
+                    
+                    // Update preview and UI
+                    imagePreview.src = uploadedImageBase64;
+                    imagePreview.classList.remove('hidden');
+                    uploadPrompt.classList.add('hidden');
+                    
+                    checkReadyState();
+                };
+                img.src = event.target.result;
             };
             reader.readAsDataURL(file);
         }
