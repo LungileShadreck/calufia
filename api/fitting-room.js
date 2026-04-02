@@ -28,13 +28,13 @@ export default async function handler(req, res) {
         "Prefer": "wait"
       },
       body: JSON.stringify({
-        // Stable Diffusion v1.5 img2img model version
-        version: "15a3689ee13b0d2616e98820eca31d4c3abcd36672ff6afce5cb6ef165fe4204",
+        // Stable Diffusion XL (more reliable than 1.5)
+        version: "39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b",
         input: {
           image: image, // Accepts standard Base64 Data URI
           prompt: prompt,
           prompt_strength: 0.8,
-          num_inference_steps: 50,
+          num_inference_steps: 25, // Optimized for speed on SDXL
           guidance_scale: 7.5
         }
       })
@@ -68,7 +68,7 @@ export default async function handler(req, res) {
       return res.status(200).json({ imageUrl });
     } else {
       return res.status(500).json({ 
-        message: "Image generation timed out or failed.", 
+        message: prediction.error ? `Replicate Error: ${prediction.error}` : `Failed with status: ${prediction.status}`, 
         status: prediction.status 
       });
     }
